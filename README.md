@@ -5,8 +5,8 @@
 
 Built for the **Nebius x NVIDIA Global AI Hackathon** in the **Best Apps and Agents** track.
 
-- Live demo: _add your Vercel URL here_
-- Demo video (3 min): _add your YouTube link here_
+- Live demo: mahi-mind.vercel.app
+- Demo video (3 min) .
 - License: [MIT](./LICENSE)
 
 > **Status: in development.** The checklist under [Project status](#project-status) shows what works today and what is still planned.
@@ -71,70 +71,10 @@ All product and customer data in this repository is fictional demo data.
 - Git
 - A Nebius Token Factory account and API key
 
-### Setup
-
-```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO/web
-npm install
-```
-
-Create a file named `.env.local` inside the `web` folder:
-
-```
-NEBIUS_API_KEY=your_api_key
-NEBIUS_BASE_URL=https://api.tokenfactory.nebius.com/v1/
-NEBIUS_MODEL_ID=your_nemotron_model_id
-```
-
-Never commit this file. It is already ignored by Git.
-
-### Find a Nemotron model ID
-
-```bash
-npx tsx --env-file=.env.local scripts/list-models.ts
-```
-
-Choose a model that supports function (tool) calling and paste its ID into `NEBIUS_MODEL_ID`.
-
-### Check the connection
-
-```bash
-npx tsx --env-file=.env.local scripts/hello.ts
-```
-
-You should see a one-sentence greeting from the model.
-
-### Run the website
-
-```bash
-npm run dev
-```
-
-Open http://localhost:3000. Restart the command after changing `.env.local`.
-
-## Project structure
-
-```
-web/
-  scripts/          terminal tests for the model connection and the agent
-  src/
-    lib/
-      nebius.ts     model client
-      tools.ts      store tools the model can call
-      agent.ts      tool-calling loop
-    data/           demo catalog and demo customers (JSON)
-    app/            website pages
-```
-
 ## Deploying
 
 The app is deployed on Vercel from this repository.
 
-1. Import the repository in Vercel.
-2. Set **Root Directory** to `web`.
-3. Add `NEBIUS_API_KEY`, `NEBIUS_BASE_URL` and `NEBIUS_MODEL_ID` as environment variables.
-4. Deploy. Every push to the main branch redeploys automatically; changing environment variables requires a manual redeploy.
 
 ## Project status
 
